@@ -186,15 +186,16 @@
 
         <div class="other_rates__container">
             <div class="tile">
-                <h4 class="">Home Delivery Rates</h4>
+                <h4 class=""><?= $this->input("homeDelRate"); ?></h4>
 
-                <p>Get 50% off for 12 weeks, plus free, unlimited access to NYTimes.com and NYTimes apps.<br><a href="https://nytimesathome.com/hd/205?MediaCode=WB7AA&amp;CMP=3FQ49">Go to Home Delivery Rates</a></p>
+                <p><?= $this->textarea("goToHomeDel") ?><br><a href="https://nytimesathome.com/hd/205?MediaCode=WB7AA&amp;CMP=3FQ49">Go to Home Delivery Rates</a></p>
             </div>
             <div class="divider-vertical"></div>
             <div class=" tile">
-                <h4 class="">Education Rates</h4>
+                <h4 class=""><?= $this->input("educationRate"); ?></h4>
 
-                <p>Save 50% on unlimited access to NYTimes.com and NYTimes apps exclusively for educators and students.
+                <p><?= $this->textarea("goToEdu") ?>
+
                     <br><a href="http://www.nytimes.com/subscriptions/edu/lp1474.html?campaignId=3KLL9">Go to Education
                         Rates</a></p>
             </div>
