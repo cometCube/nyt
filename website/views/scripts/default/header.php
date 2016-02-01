@@ -15,15 +15,21 @@
             </ul>
         </div>
 
-
+<div class="mainHeader">
         <div class="title desktop">
 			<span>
 			<?= $this->textarea("titleDesc") ?></span>
         <br>
         <span id="sub_title"><?= $this->input("titlePrice"); ?></span></div>
 
-        <div class="title moflow">Try the Times Digital Experience<br><span id="orange">99¢ for 4 weeks</span>
+        <div class="title moflow">Try the Times Digital Experience<br>
+        <span id="orange">99¢ for 4 weeks</span>
         </div>
+        <div id="titleLogo"><?= $this->image("title-logo", array(
+    "title" => "The New York Times",
+
+   
+)); ?></div></div>
 </section>
 
 

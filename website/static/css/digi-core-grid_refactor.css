@@ -117,7 +117,7 @@ a, a:visited {
   font-weight: 200;
   letter-spacing: 0;
   width: 100%;
-  background: url("../img/devices_header.jpg") no-repeat right 15% top 20px;
+ 
   padding-bottom: 15px;
   padding-left: 50px; }
   @media only screen and (min-width: 768px) and (max-width: 979px) {
@@ -946,3 +946,11 @@ ul#footer_content li a span.desktop {
   ul#footer_content li a span.moflow {
     display: inline-block;
     text-decoration: none; } }
+
+.mainHeader {
+  width: 100%;
+}
+.mainHeader .title
+{
+float: left;
+}
