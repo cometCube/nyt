@@ -1,0 +1,948 @@
+.desktop {
+  display: block; }
+  @media only screen and (max-width: 767px) {
+    .desktop {
+      display: none; } }
+
+.moflow {
+  display: none; }
+  @media only screen and (max-width: 767px) {
+    .moflow {
+      display: block; } }
+
+.desktop-row {
+  display: table-row; }
+  @media only screen and (max-width: 767px) {
+    .desktop-row {
+      display: none; } }
+
+.mobile-row {
+  display: none; }
+  @media only screen and (max-width: 767px) {
+    .mobile-row {
+      display: block; } }
+
+body {
+  margin: 0;
+  background: #fff;
+  font-size: 1em; }
+
+section, div, h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0; }
+
+.mo {
+  display: none; }
+
+a, a:visited {
+  color: #005DA2; }
+
+#container {
+  width: 980px;
+  margin: 10px auto;
+  overflow: hidden; }
+  @media only screen and (min-width: 768px) and (max-width: 979px) {
+    #container {
+      width: 100%;
+      margin: 0 auto; } }
+  @media only screen and (max-width: 767px) {
+    #container {
+      width: 100%;
+      min-width: 320px; } }
+
+.font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.h_ruler {
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+  border: none;
+  height: 1px;
+  background-color: #ccc; }
+  @media only screen and (max-width: 767px) {
+    .h_ruler {
+      height: 1.5px;
+      clear: both; } }
+
+.section_title {
+  font-weight: 200;
+  font-size: 30px;
+  color: #666;
+  text-align: center;
+  padding: 20px 0; }
+  @media only screen and (max-width: 767px) {
+    .section_title {
+      font: 400 18px Georgia;
+      color: #000;
+      padding: 5px 0; } }
+  @media only screen and (min-width: 321px) and (max-width: 767px) {
+    .section_title {
+      font: 400 17px Georgia;
+      color: #000;
+      padding: 5px 0; } }
+
+.modal-backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: none; }
+
+.modal {
+  display: none;
+  max-width: 500px;
+  width: 80%;
+  padding: 40px;
+  background: #ffffff;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 300px;
+  margin: 0 0 0 -290px; }
+  @media only screen and (max-width: 767px) {
+    .modal {
+      padding: 40px 5%;
+      max-width: 688px;
+      width: 90%;
+      margin: 0 auto;
+      left: 0;
+      top: 20%; } }
+
+#header_section {
+  font-family: "nyt-franklin", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 200;
+  letter-spacing: 0;
+  width: 100%;
+  background: url("../img/devices_header.jpg") no-repeat right 15% top 20px;
+  padding-bottom: 15px;
+  padding-left: 50px; }
+  @media only screen and (min-width: 768px) and (max-width: 979px) {
+    #header_section {
+      background-position: right 13% top 15px; } }
+  @media only screen and (max-width: 767px) {
+    #header_section {
+      background: none;
+      height: 70px;
+      padding-left: 0;
+      padding-bottom: 30px; } }
+
+#logo_nyt {
+  width: 214px;
+  float: left;
+  padding-left: 2px; }
+  @media only screen and (min-width: 768px) and (max-width: 979px) {
+    #logo_nyt {
+      padding-top: 2px; } }
+  @media only screen and (max-width: 767px) {
+    #logo_nyt {
+      text-align: center;
+      margin: 0 auto;
+      padding-bottom: 6px;
+      width: 100%;
+      border-bottom: 1px solid #ccc; } }
+  @media only screen and (min-width: 321px) and (max-width: 767px) {
+    #logo_nyt {
+      height: 30px; } }
+
+#logo_nyt img {
+  border-style: none;
+  width: 100%; }
+  @media only screen and (max-width: 767px) {
+    #logo_nyt img {
+      width: 214px;
+      height: 28px;
+      margin: auto;
+      border: none; } }
+  @media only screen and (min-width: 321px) and (max-width: 767px) {
+    #logo_nyt img {
+      width: 214px;
+      height: 28px;
+      margin: auto;
+      border: none; } }
+
+.memberTools__ul {
+  padding: 6px 0 0;
+  text-align: left;
+  vertical-align: bottom;
+  margin-top: 0;
+  margin-left: 10px; }
+
+.memberTools__li {
+  color: #005DA2;
+  font-family: arial, helvetica, sans-serif;
+  font-size: .8em;
+  margin: 0;
+  display: inline;
+  padding: 0 8px 0 4px;
+  letter-spacing: -0.5px; }
+
+#link_login {
+  border-right: 1px solid #005DA2;
+  padding-left: 15px;
+  display: inline; }
+  @media only screen and (max-width: 767px) {
+    #link_login {
+      display: none; } }
+
+@media only screen and (max-width: 767px) {
+  #link_hd {
+    display: none; } }
+
+#link_login.hidden {
+  display: none; }
+
+#link_hd.nologin {
+  margin-left: 10px; }
+  @media only screen and (max-width: 767px) {
+    #link_hd.nologin {
+      display: none; } }
+
+.top_ruler {
+  margin-top: -20px;
+  text-align: left;
+  margin-left: 0;
+  display: block;
+  width: 69.5%; }
+  @media only screen and (max-width: 767px) {
+    .top_ruler {
+      display: none; } }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+.title {
+  padding: 0 0 12px 2px;
+  font-weight: 200;
+  font-size: 32.5px;
+  color: #666;
+  text-align: left;
+  margin-top: 10px;
+  width: 55%;
+  letter-spacing: -0.5px; }
+  @media only screen and (min-width: 768px) and (max-width: 979px) {
+    .title {
+      font-size: 29.8px; } }
+
+.cancel {
+  font-family: "nyt-franklin", "Helvetica Neue", Arial, sans-serif;
+  color: #6289a5;
+  font-size: 26.6px;
+  font-weight: 200;
+  font-style: italic; }
+  @media only screen and (max-width: 767px) {
+    .cancel {
+      font-size: 14px;
+      margin: 0 auto;
+      padding-top: 16px;
+      text-align: center;
+      font-family: Georgia, serif; } }
+
+.form_factor-tablet #header_section {
+  margin-top: 20px;
+  padding-left: 30px;
+  background: url("../img/devices_tablet_desktop.jpg") no-repeat top 100% right 10%; }
+.form_factor-tablet .title {
+  width: 64%;
+  letter-spacing: -0.75px; }
+
+.title.moflow {
+  text-align: center;
+  font-size: 19px;
+  font-family: Georgia, serif;
+  font-weight: normal;
+  line-height: 1.2em;
+  width: 100%;
+  color: #000;
+  height: 30px; }
+
+.title span {
+  color: #f60;
+  font-size: 31px; }
+  @media only screen and (min-width: 768px) and (max-width: 979px) {
+    .title span {
+      font-size: 29.1px; } }
+  @media only screen and (max-width: 767px) {
+    .title span {
+      font-weight: bold;
+      font-size: 19px;
+      font-family: Georgia, serif; } }
+
+#bundle_section {
+  position: relative;
+  width: 94%;
+  margin: auto; }
+
+#table_bundles {
+  border: none;
+  display: table;
+  border-collapse: separate;
+  border-spacing: 0; }
+  @media only screen and (max-width: 767px) {
+    #table_bundles {
+      display: block; } }
+
+tr {
+  border-bottom: none;
+  display: table-row; }
+  @media only screen and (max-width: 767px) {
+    tr {
+      display: block; } }
+
+.feature {
+  width: 160px; }
+
+.bundle_col {
+  width: 274px;
+  border-left: 1px solid #ccc;
+  text-align: center;
+  vertical-align: middle; }
+  @media only screen and (max-width: 767px) {
+    .bundle_col {
+      float: left; } }
+
+thead .bundle_col {
+  border-top: 1px solid #ccc;
+  height: 105px;
+  padding: 0 0 36px;
+  background-color: #eceee7;
+  position: relative;
+  text-align: center;
+  vertical-align: top; }
+  @media only screen and (max-width: 767px) {
+    thead .bundle_col {
+      background-color: #fff;
+      border: none;
+      height: 55px;
+      padding: 0;
+      width: 63%;
+      margin: 0; } }
+
+thead .bundle_col p {
+  font-size: 29px;
+  font-weight: 200;
+  letter-spacing: -1px;
+  color: #f60;
+  line-height: 40px;
+  margin: 30px auto 20px; }
+  @media only screen and (min-width: 768px) and (max-width: 979px) {
+    thead .bundle_col p {
+      font-size: 26px; } }
+
+td {
+  font-family: nyt-franklin, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #666;
+  padding: 8px 3px;
+  margin: 0 2px;
+  border-bottom: solid 1px #ccc; }
+  @media only screen and (max-width: 767px) {
+    td {
+      display: block;
+      border-bottom: none; } }
+
+td.disclaim {
+  border-bottom: none; }
+
+thead .button-digi {
+  display: inline-block;
+  font-size: 14px;
+  font-family: nyt-franklin, 'helvetica neue', arial,sans-serif;
+  border-radius: 3px;
+  transition: background-color .3s;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 5px auto 0;
+  background-color: #6289a5;
+  border: 1px solid #4d7b9f;
+  color: #fff;
+  font-weight: 700;
+  padding: 7px 20px; }
+  @media only screen and (max-width: 767px) {
+    thead .button-digi {
+      padding: 0;
+      width: 95%;
+      background-color: #fe7417;
+      border-radius: 5px;
+      border: none;
+      box-shadow: none;
+      line-height: 46px;
+      height: 46px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-weight: bold;
+      font-size: 11.5px;
+      letter-spacing: -1px;
+      color: #fff;
+      text-transform: uppercase;
+      text-align: center;
+      display: block; } }
+
+thead .button-digi:hover {
+  background-color: #326891;
+  border: 1px solid #265e8b; }
+  @media only screen and (max-width: 767px) {
+    thead .button-digi:hover {
+      background-color: #fe7417;
+      border: none; } }
+
+.dot {
+  background-color: #6289a5;
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: auto;
+  border-radius: 100%; }
+
+.h_ruler {
+  width: 90%; }
+
+#disclaimer {
+  margin-top: 10px;
+  font-size: 11px;
+  font-family: nyt-franklin, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  letter-spacing: normal; }
+
+.form_factor-tablet #bundle_section {
+  position: relative;
+  width: 94%;
+  margin: auto; }
+.form_factor-tablet .bundle_col:nth-child(2) {
+  display: none; }
+.form_factor-tablet .bundle_col {
+  width: 35%; }
+.form_factor-tablet td.disclaim:nth-child(1) {
+  display: none; }
+
+td.mobile.price-sale,
+td.mobile.price-reg {
+  display: none; }
+  @media only screen and (max-width: 767px) {
+    td.mobile.price-sale,
+    td.mobile.price-reg {
+      text-align: center;
+      width: 12%;
+      margin: 0;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      padding-bottom: 2px;
+      display: inline-block;
+      color: #024f8d; } }
+
+td.mobile.price-sale {
+  padding-right: 1%;
+  border-right: solid 1px #ccc; }
+
+td.mobile.price-reg {
+  clear: both;
+  color: #000;
+  margin-right: 0.5%;
+  width: 16%; }
+
+span.price {
+  font-size: 16px; }
+
+td.link_details {
+  display: none; }
+  @media only screen and (max-width: 767px) {
+    td.link_details {
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: underline;
+      display: block;
+      font-family: arial, helvetica, sans-serif;
+      font-size: 9px;
+      font-weight: bold;
+      text-align: right;
+      clear: both;
+      width: 84%;
+      padding: 0;
+      margin-bottom: 6px; } }
+
+span.details_hide {
+  display: none; }
+
+.detail_mobile_sma,
+.detail_mobile_tab,
+.detail_mobile_ada {
+  display: none; }
+
+@media only screen and (max-width: 767px) {
+  .show_detail_mobile {
+    display: block; } }
+
+@media only screen and (max-width: 767px) {
+  .detail_mobile {
+    float: none;
+    clear: both; } }
+
+.detail_mobile h4 {
+  padding: 0 0 0 14px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 12.5px;
+  font-weight: bold;
+  color: #000; }
+
+.detail_mobile ul {
+  list-style-type: none;
+  padding: 0 0 0 20px;
+  margin-top: 0;
+  width: 90%; }
+
+.detail_mobile li {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 11.25px;
+  font-weight: normal;
+  margin: 6px 0 0 0;
+  padding: 0;
+  color: #000;
+  line-height: 14px; }
+
+.detail_mobile li:before {
+  color: #fe7417;
+  content: '\2022';
+  display: inline-block;
+  position: relative;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  padding-right: 2%;
+  margin-left: -2%; }
+
+.detail_mobile .sup {
+  vertical-align: super;
+  font-size: 6px; }
+
+#home-del-mo {
+  font-family: Georgia, serif;
+  color: #000;
+  margin: 5px 2.5% 5px;
+  padding: 10px 2.5%;
+  width: auto;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 0.6em;
+  font-weight: bold;
+  border-top: 2px solid #eee;
+  border-bottom: 2px solid #eee; }
+
+/* the disclaimer in lp8XL46.html has an asterisk that must be removed for mobile*/
+@media only screen and (max-width: 767px) {
+  #disclaimer sup.desk {
+    display: none; } }
+
+/* ----------------------------------------------------- */
+/* ---------- Other rates Section - CSS style ---------- */
+/* ----------------------------------------------------- */
+#other_rates_section {
+  font-family: "nyt-franklin", "Helvetica Neue", Arial, sans-serif;
+  margin-top: 0;
+  padding-top: 0; }
+
+.other_rates__container {
+  width: 90%;
+  padding: 40px 0;
+  overflow: hidden;
+  margin: auto;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
+  .other_rates__container .tile {
+    width: 40%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  .other_rates__container .divider-vertical {
+    background-color: #ccc;
+    width: 1px; }
+  .other_rates__container h4 {
+    font-weight: 200;
+    font-size: 30px;
+    color: #666;
+    text-align: left;
+    padding: 0; }
+  .other_rates__container p {
+    color: #666;
+    line-height: 18px !important;
+    font-family: "nyt-franklin", "Helvetica Neue", Arial, sans-serif;
+    font-size: 15.5px;
+    font-weight: 400;
+    margin: 10px 0 0 0; }
+  .other_rates__container a {
+    line-height: 18px !important;
+    font-family: "nyt-franklin", "Helvetica Neue", Arial, sans-serif;
+    font-size: 13.5px;
+    color: #005DA2;
+    font-weight: 400;
+    text-decoration: underline;
+    letter-spacing: 0; }
+  .other_rates__container a:hover {
+    color: #004276; }
+
+/* ----------------------------------------------------- */
+/* ----   More Subscriptions Options - CSS style  ------- */
+/* ----------------------------------------------------- */
+#more_options_section {
+  font-family: "nyt-franklin", "Helvetica Neue", Arial, sans-serif;
+  text-align: center;
+  padding-bottom: 0; }
+
+#more_options_title {
+  padding: 20px 0 10px; }
+
+.icons_strip {
+  height: 180px;
+  margin: -10px auto 15px;
+  overflow: hidden;
+  position: relative;
+  text-align: center; }
+  @media only screen and (max-width: 767px) {
+    .icons_strip {
+      margin: -20px auto 20px;
+      height: auto; } }
+
+.icons_strip ul {
+  padding: 0;
+  list-style-type: none;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  margin: 10px auto 0;
+  width: 65%; }
+  .icons_strip ul a {
+    text-decoration: none; }
+  @media only screen and (max-width: 767px) {
+    .icons_strip ul {
+      width: 95%;
+      margin: 0 auto; } }
+
+.icons_strip li {
+  margin: auto;
+  overflow: hidden;
+  position: relative; }
+  @media only screen and (max-width: 767px) {
+    .icons_strip li {
+      width: 33%; }
+      .icons_strip li.hd {
+        -webkit-order: -2;
+            -ms-flex-order: -2;
+                order: -2; }
+      .icons_strip li.opinion {
+        -webkit-order: -1;
+            -ms-flex-order: -1;
+                order: -1; } }
+
+.icon {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+  @media only screen and (max-width: 767px) {
+    .icon {
+      padding-top: 10px; } }
+
+.icon-image {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-flex: 70px;
+      -ms-flex: 70px;
+          flex: 70px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  fill: #666; }
+  @media only screen and (max-width: 767px) {
+    .icon-image {
+      fill: #000; } }
+
+.icon-line {
+  display: block;
+  background-color: #666;
+  border-radius: 1px;
+  width: 38px;
+  height: 2px;
+  margin-top: 10px; }
+  @media only screen and (max-width: 767px) {
+    .icon-line {
+      display: none; } }
+
+.active .icon-line {
+  background-color: #fe7417; }
+  @media only screen and (max-width: 767px) {
+    .active .icon-line {
+      background-color: #000; } }
+
+a .icon-text {
+  color: #666;
+  line-height: 30px;
+  text-transform: uppercase;
+  font-family: "nyt-franklin", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 13px; }
+  @media only screen and (max-width: 767px) {
+    a .icon-text {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.6em;
+      font-weight: bold;
+      color: #000;
+      width: 100px;
+      line-height: 1.2em;
+      padding-top: 0.8em;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-justify-content: flex-end;
+          -ms-flex-pack: end;
+              justify-content: flex-end; } }
+  @media only screen and (min-width: 480px) and (max-width: 767px) {
+    a .icon-text {
+      font-size: 2vw; } }
+
+a.active .icon-text {
+  color: #fe7417; }
+  @media only screen and (max-width: 767px) {
+    a.active .icon-text {
+      color: #000; } }
+
+.features {
+  text-align: center;
+  margin: 0 auto;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  @media only screen and (max-width: 767px) {
+    .features {
+      display: none; } }
+
+.features p {
+  background: none;
+  display: none;
+  opacity: 0;
+  font-family: "nyt-franklin", "Helvetica Neue", Arial, sans-serif;
+  color: #666;
+  font-size: 15.5px;
+  font-weight: 400;
+  text-align: center;
+  padding: 0 20px;
+  line-height: 20px;
+  transition: all 0.3s ease-in-out;
+  width: 80%; }
+
+.features p.active {
+  opacity: 1;
+  display: inline; }
+
+.text-link {
+  font-size: 13.5px;
+  display: none; }
+
+a.text-link.showing {
+  display: inline;
+  white-space: nowrap; }
+
+.active .icon-image {
+  fill: #fe7417; }
+  @media only screen and (max-width: 767px) {
+    .active .icon-image {
+      fill: #000; } }
+.icon-image.hd {
+  width: 46px; }
+.icon-image.premier {
+  width: 40px; }
+.icon-image.edu {
+  width: 70px; }
+@media only screen and (max-width: 767px) {
+  .icon-image.gift {
+    margin-top: -12px; } }
+
+.clear {
+  clear: both; }
+
+/* ----------------------------------------------------- */
+/* ----   FAQ Sections - CSS style  ------- */
+/* ----------------------------------------------------- */
+#faq_section {
+  margin: auto;
+  font-family: "nyt-franklin", "Helvetica Neue", Arial, sans-serif;
+  clear: both; }
+  @media only screen and (max-width: 767px) {
+    #faq_section {
+      border-bottom: 1px solid #eee; } }
+
+#faq_section .answer {
+  display: none;
+  padding-left: 85px;
+  font-weight: 400;
+  color: #666;
+  letter-spacing: 0;
+  font-size: 14px;
+  width: 70%; }
+  @media only screen and (max-width: 767px) {
+    #faq_section .answer {
+      padding: 0 2.5%;
+      font-size: 10.75px;
+      letter-spacing: 0;
+      font-family: Georgia, serif;
+      font-weight: normal;
+      color: #000;
+      width: 95%; } }
+
+@media only screen and (max-width: 767px) {
+  #faq_section .answer p {
+    padding: 0;
+    margin-top: 2px; } }
+
+#faq_section span.supreg {
+  vertical-align: text-top; }
+  @media only screen and (max-width: 767px) {
+    #faq_section span.supreg {
+      display: none; } }
+
+#faq_section span.sup {
+  vertical-align: super;
+  font-size: 6px; }
+  @media only screen and (max-width: 767px) {
+    #faq_section span.sup {
+      display: none; } }
+
+#faq_section a {
+  text-decoration: underline; }
+
+#faq_section h3 a {
+  text-decoration: underline; }
+
+#faq_section h2 {
+  line-height: 35px;
+  font-weight: 400;
+  color: #666;
+  cursor: pointer;
+  letter-spacing: 0;
+  font-size: 16px;
+  padding-left: 40px; }
+  @media only screen and (max-width: 767px) {
+    #faq_section h2 {
+      padding: 10px 2.5%;
+      border-top: 1px solid #eee;
+      text-transform: none;
+      font-size: 11.25px;
+      letter-spacing: -0.2px;
+      font-family: Georgia, serif;
+      font-weight: normal;
+      color: #000;
+      line-height: 15px; } }
+
+#faq_section h2.hovered {
+  color: #005DA2; }
+  @media only screen and (max-width: 767px) {
+    #faq_section h2.hovered {
+      color: #000; } }
+
+#faq_section h2.expanded {
+  color: #005DA2; }
+  @media only screen and (max-width: 767px) {
+    #faq_section h2.expanded {
+      color: #000; } }
+
+/* ----------------------------------------------------- */
+/*    -------         Footer section        --------     */
+/* ----------------------------------------------------- */
+#footer-holder {
+  text-align: center; }
+
+img.moflow {
+  margin: auto; }
+
+#footer_content {
+  border-top: none;
+  padding: 20px; }
+  @media only screen and (max-width: 767px) {
+    #footer_content {
+      border-right: 1px solid #eee;
+      padding: 0; } }
+
+ul#footer_content li {
+  border-right: 1px solid #005DA2;
+  padding: 0 8px 0 4px;
+  display: inline; }
+  @media only screen and (max-width: 767px) {
+    ul#footer_content li {
+      border-right: 1px solid #eee;
+      padding: 0 4px; } }
+
+ul#footer_content li#link_help_footer {
+  border-right: none; }
+
+ul#footer_content li a,
+ul#footer_content li a:visited {
+  font-family: arial, helvetica, sans-serif;
+  font-size: 13px;
+  color: #005DA2;
+  font-weight: 400;
+  text-decoration: underline;
+  letter-spacing: 0; }
+  @media only screen and (max-width: 767px) {
+    ul#footer_content li a,
+    ul#footer_content li a:visited {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 11.25px;
+      color: #000;
+      text-decoration: none; } }
+
+ul#footer_content li a span.desktop {
+  display: inline-block;
+  text-decoration: underline; }
+  @media only screen and (max-width: 767px) {
+    ul#footer_content li a span.desktop {
+      display: none; } }
+
+@media only screen and (max-width: 767px) {
+  ul#footer_content li a span.moflow {
+    display: inline-block;
+    text-decoration: none; } }
