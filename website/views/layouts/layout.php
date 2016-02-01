@@ -42,11 +42,11 @@
 </head>
 
 <body>
-<?= $this->inc("/home/header");?>
+<?= $this->inc("/shared/header");?>
 
 <?= $this->layout()->content ?>
 
-<?= $this->inc("/home/footer"); ?>
+<?= $this->inc("/shared/footer"); ?>
 </body>
 </html>
 
