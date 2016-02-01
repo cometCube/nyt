@@ -954,3 +954,6 @@ ul#footer_content li a span.desktop {
 {
 float: left;
 }
+body {
+  margin-left: 20px;
+}

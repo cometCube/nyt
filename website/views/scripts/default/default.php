@@ -187,17 +187,12 @@
         <div class="other_rates__container">
             <div class="tile">
                 <h4 class=""><?= $this->input("homeDelRate"); ?></h4>
-
-                <p><?= $this->textarea("goToHomeDel") ?><br><a href="https://nytimesathome.com/hd/205?MediaCode=WB7AA&amp;CMP=3FQ49">Go to Home Delivery Rates</a></p>
+                <p><?= $this->wysiwyg("goToHomeDel") ?><br></p>
             </div>
             <div class="divider-vertical"></div>
             <div class=" tile">
                 <h4 class=""><?= $this->input("educationRate"); ?></h4>
-
-                <p><?= $this->textarea("goToEdu") ?>
-
-                    <br><a href="http://www.nytimes.com/subscriptions/edu/lp1474.html?campaignId=3KLL9">Go to Education
-                        Rates</a></p>
+                <p><?= $this->wysiwyg("goToEdu") ?></p>
             </div>
         </div>
     </section>
@@ -242,7 +237,8 @@
         </svg>
 
 
-        <div class="section_title desktop" id="more_options_title">More Subscription Options</div>
+        <div class="section_title desktop" id="more_options_title">
+        <?= $this->input("moreSubsPrice"); ?></div>
         <div class="section_title moflow">More subscriptions from The Times</div>
 
         <div class="icons_strip">
@@ -343,83 +339,38 @@
     <hr class="h_ruler">
 
     <section id="faq_section">
-        <div class="section_title" id="faq_section_title">Frequently Asked Questions</div>
+        <div class="section_title" id="faq_section_title">
+        <?= $this->input("faq"); ?></div>
 
-        <h2 class="expanded">What is a digital subscription? What do I get when I subscribe?</h2>
+<div id ="accordian" class ="accordian">
+  <?php while($this->block("faqQuesAns")->loop()) {  ?>
+      <h3>
+        <?php echo $this->input('FaqQuest'); ?>
+      </h3>
+      <div>
+        <?php echo $this->wysiwyg('FaqAns'); ?>
+      </div>
+  
+ <?php } ?>
+</div>
+<h2> 
+    <?= $this->link("viewFAQ"); ?>
+</h2>
 
-        <div style="display: block" class="answer">
-            <p>An unlimited New York Times digital subscription provides ongoing access to NYTimes.com from any computer
-                or device, as well as access to apps on portable devices. When you subscribe, you’ll get access to
-                articles and blog posts, as well as video, slide shows and other multimedia features.</p>
+ </section>
+<script>
+   // Use the jQuery.noConflict(); on site where the collapsible header does not work
+   // Declare a variable for the jQuery.noConflict
+   jQuery.noConflict();
+  jQuery('.accordian h3').on('click', function(){
+     jQuery(this).next('div').slideToggle(200);
+     jQuery(this).siblings().next('div').slideUp();
+     
+     jQuery(this).toggleClass('tactive');
+     
+     jQuery(this).siblings().removeClass('tactive');
+  });    
 
-        </div>
-        <h2>Can I get a subscription to NYTimes.com only?</h2>
-
-        <div class="answer">
-            <p>No. A digital subscription package gives you ongoing access to NYTimes.com on any computer or device,
-                plus NYTimes apps for your smartphone and/or tablet, depending on the option you choose.</p>
-        </div>
-        <h2>I get home delivery of the newspaper. Do I get free access?</h2>
-
-        <div class="answer">
-            <p>Yes. Print subscribers to The New York Times get a free All Digital Access subscription. This package
-                includes free, unlimited access to NYTimes.com on any device, as well as the full range of NYTimes apps
-                for your smartphone (iPhone<span class="supreg">&reg;</span>, BlackBerry<span class="supreg">&reg;</span>,
-                Windows<span class="supreg">&reg;</span> Phone, Android<span class="sup">TM</span>-powered phones) and your
-                tablet (iPad<span class="supreg">&reg;</span> and Android-powered tablets). Print subscribers can share All
-                Digital Access with a family member. Free, unlimited access is provided to all print subscribers, no
-                matter what type of subscription you have (daily, weekday, Weekender, etc.). You’ll also qualify
-                for free digital access if your home delivery is provided by a third party (rather than by The New York
-                Times directly). NYTimes home delivery subscriptions do not include e-reader editions, Times Insider
-                content or digital versions of The New York Times Crossword.</p>
-
-            <p>To activate your digital subscription, you’ll need to connect your home delivery subscription to
-                your NYTimes.com account. If you haven’t already done so, <a class="free_access_hd nomo" href="https://myaccount.nytimes.com/link/homedelivery?&amp;ref=LP&amp;campaignId=47HQY">visit this page to connect your accounts</a>.</p>
-        </div>
-        <h2>Do you offer education and corporate discounts?</h2>
-
-        <div class="answer">
-            <p>Yes. Our seat and site license programs allow schools, organizations and corporations to purchase digital
-                access for multiple users at a group discount. To learn more, email <a class="faq_emailgroupsubs" href="mailto:groupsubs@nytimes.com">groupsubs@nytimes.com</a> or <a class="faq_contact" target="_blank" href="https://nytimesathome.com/corp/002?campaignId=3LLRQ">contact
-                    us online</a>.</p>
-
-            <p>We also offer individual subscriptions at a discounted education rate. To learn more, <a class="faq_edu" target="_blank" href="http://www.nytimes.com/subscriptions/edu/lp3HLK4.html?campaignId=3J98R">click here</a>.</p>
-        </div>
-        <h2>Can I give a gift subscription to The Times?</h2>
-
-        <div class="answer">
-            <p>Yes. To give unlimited access to NYTimes.com and NYTimes apps for as low as $30, <a class="faq_gift" target="_blank" href="http://www.nytimes.com/subscriptions/Multiproduct/lp4021.html?campaignId=47J6J">click here</a>.</p>
-        </div>
-        <h2>What is the cancellation and refund policy?</h2>
-
-        <div class="answer">
-            <p>You can cancel your subscription at any time. When you cancel, we will stop charging your account the
-                following billing cycle. Each billing cycle is four weeks, so your unlimited access will continue for
-                the remainder of the current four-week period.</p>
-
-            <p><a class="faq_cancel" target="_blank" href="http://www.nytimes.com/content/help/rights/sale/terms-of-sale.html#cancel">View the full cancellation and refund policy &gt;&gt;</a></p>
-        </div>
-        <h2>What if I don’t want to subscribe &mdash; can I still read NYTimes.com for free?</h2>
-
-        <div class="answer">
-            <p>Visitors can enjoy 10 free articles (including blog posts, slide shows and other multimedia features)
-                each calendar month on NYTimes.com, as well as unrestricted access to browse the home page, section
-                fronts, blog fronts and classifieds. Your free, limited access resets every month: at the beginning of
-                each calendar month, you’ll once again be able to view 10 free articles for that month.</p>
-
-            <p>NYTimes apps are free to download and install. After downloading an app, you can read 10 articles each
-                month for free. At the beginning of each calendar month, another 10 articles will be available for
-                free.</p>
-
-            <p>For nonsubscribers, articles from the <a class="faq_archives" href="http://www.nytimes.com/content/help/search/archives/archives.html">New York
-                Times archives</a> from 1923 through 1980 are $3.95 each. Views of archived articles outside that date
-                range are free but still count toward the 10-article monthly limit.</p>
-        </div>
-        <h2>
-            <a class="faq_complete" target="_blank" href="http://www.nytimes.com/content/help/account/purchases/subscriptions-and-purchases.html">View our complete FAQ »</a>
-        </h2>
-
-
-    </section>
-
+   
+</script>
     <br clear="all">
