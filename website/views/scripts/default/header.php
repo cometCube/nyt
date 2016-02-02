@@ -1,3 +1,17 @@
+<?php
+if($this->editmode){
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" media="all" href="website/static/css/digi-core-grid_refactor.css"/>
+</head>
+
+<body>
+<?php
+}
+?>
+
 <section class="" id="header_section">
         <a href="http://www.nytimes.com" id="logo_nyt">
         <?= $this->image("head-logo", array(
@@ -32,5 +46,11 @@
 )); ?></div></div>
 </section>
 
-
-
+<?php
+if($this->editmode){
+?>
+</body>
+</html>
+<?php
+}
+?>

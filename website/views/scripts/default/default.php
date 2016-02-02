@@ -1,3 +1,8 @@
+<?php
+$packages = $this->packages;
+$subscription = $this->subscription;
+?>
+
 <section id="bundle_section">
 
         <div class="table_div">
@@ -6,8 +11,11 @@
                 <thead>
                 <tr>
                     <td class="feature"></td>
+                    <?php foreach ($packages as $value) { ?>
+                    	
+                   
                     <td class="bundle_col">
-                        <p class="desktop">Web + Smartphone</p>
+                        <p class="desktop"><?php echo $value->o_key;?></p>
                         <a href="https://myaccount.nytimes.com/get-started?OC=373674" data-oc="373674" class="button-digi font-smoothing">
                             <span class="desktop">Try for 99¢</span>
                             <span class="moflow">Get web + Smartphone apps ►</span>
@@ -15,7 +23,7 @@
 
                     </td>
                     <td class="mobile price-sale">first 4<br>weeks<br><span class="price">99¢</span></td>
-                    <td class="mobile price-reg">Every Week<br>Thereafter<br><span class="price">$3.75</span></td>
+                    <td class="mobile price-reg">Every Week<br>Thereafter<br><span class="price"><?php echo '$'.$value->priceThereAfter;?></span></td>
                     <td class="mobile link_details" id="details_mo_sma"><a class="a_link_details"><span class="details_hide">Hide</span><span class="details_see">See</span> Details</a></td>
                     <td class="detail_mobile detail_mobile_sma">
                         <h4>
@@ -40,84 +48,7 @@
 
                         </ul>
                     </td>
-
-                    <td class="bundle_col">
-                        <p class="desktop">Web + Tablet</p>
-                        <a href="https://myaccount.nytimes.com/get-started?OC=1000008" data-oc="1000008" class="button-digi font-smoothing">
-                            <span class="desktop">Try for 99¢</span>
-                            <span class="moflow">Get web + Tablet apps ►</span>
-                        </a>
-                    </td>
-                    <td class="mobile price-sale">first 4<br>weeks<br><span class="price">99¢</span></td>
-                    <td class="mobile price-reg">Every Week<br>Thereafter<br><span class="price">$5.00</span></td>
-
-                    <td class="mobile link_details" id="details_mo_tab"><a class="a_link_details"><span class="details_hide">Hide</span><span class="details_see">See</span> Details</a></td>
-                    <td class="detail_mobile detail_mobile_tab">
-                        <h4>
-                            <span class="tab">NYTimes.com + Tablet Apps</span>
-                        </h4>
-
-                        <ul id="details_list">
-
-                            <li class="sma ada tab">Unlimited access to NYTimes.com on any browser.</li>
-
-                            <li class="tab">NYTimes tablet apps on iPad<span class="supreg">&reg;</span>, Kindle Fire,
-                                Windows<span class="supreg">&reg;</span> 8 desktop and tablet, Android<span class="sup">TM</span>-powered
-                                tablets.
-                            </li>
-
-                            <li class="ada sma tab ">TimesMachine Archive &mdash; See issues with all articles, photos
-                                and ads as they originally appeared. View up to 100 articles per month.
-                            </li>
-
-                            <li class="tab">After the introductory period, your rate will be <span class="price-per-week" id="price_tablet">$5.00</span>
-                                per week, billed every four weeks.
-                            </li>
-
-                        </ul>
-                    </td>
-
-                    <td class="bundle_col">
-                        <p class="desktop">All Digital Access</p>
-                        <a href="https://myaccount.nytimes.com/get-started?OC=1000010" data-oc="1000010" class="button-digi font-smoothing">
-                            <span class="desktop">Try for 99¢</span>
-                            <span class="moflow">Get All Digital Access ►</span>
-                        </a>
-
-                    </td>
-                    <td class="mobile price-sale">first 4<br>weeks<br><span class="price">99¢</span></td>
-                    <td class="mobile price-reg">Every Week<br>Thereafter<br><span class="price">$8.75</span></td>
-
-                    <td class="mobile link_details" id="details_mo_ada"><a class="a_link_details"><span class="details_hide">Hide</span><span class="details_see">See</span> Details</a></td>
-                    <td class="detail_mobile detail_mobile_ada">
-                        <h4>
-                            <span class="ada">All Digital Access</span>
-                        </h4>
-
-                        <ul id="details_list">
-
-                            <li class="sma ada tab">Unlimited access to NYTimes.com on any browser.</li>
-
-                            <li class="ada sma">NYTimes smartphone apps on iPhone<span class="supreg">&reg;</span>,
-                                BlackBerry<span class="supreg">&reg;</span> 10, Windows&reg; Phone 7+ and Android<span class="sup">TM</span>-powered phones.
-                            </li>
-
-                            <li class="ada">NYTimes tablet apps on iPad<span class="supreg">&reg;</span>, Kindle Fire,
-                                Windows 8 desktop and tablet, Android-powered tablets.
-                            </li>
-
-                            <li class="ada sma tab ">TimesMachine Archive &mdash; See issues with all articles, photos
-                                and ads as they originally appeared. View up to 100 articles per month.
-                            </li>
-
-                            <li class="ada">Share your All Digital Access with a family member.</li>
-
-                            <li class="ada">After the introductory period, your rate will be <span class="price-per-week" id="price_ada">$8.75</span>
-                                per week, billed every four weeks.
-                            </li>
-
-                        </ul>
-                    </td>
+                    <?php } ?>
 
                 </tr>
                 </thead>
@@ -125,39 +56,55 @@
 
                 <tr class="desktop-row">
                     <td>Price thereafter</td>
-                    <td class="bundle_col">$3.75 a week</td>
-                    <td class="bundle_col">$5.00 a week</td>
-                    <td class="bundle_col">$8.75 a week</td>
+					<?php foreach ($packages as $value) { ?>
+						<td class="bundle_col"><?php echo '$'.$value->priceThereAfter.' '.'a week';?></td>
+                    <?php } ?>
                 </tr>
                 <tr class="desktop-row">
                     <td>Access to NYTimes.com</td>
-                    <td class="bundle_col"><span class="dot"></span></td>
-                    <td class="bundle_col"><span class="dot"></span></td>
-                    <td class="bundle_col"><span class="dot"></span></td>
+					<?php foreach ($packages as $value) {
+					if ($value->accessTNYTimes !=1) { ?>
+					<td class="bundle_col"></td>
+					<?php } else { ?>
+					<td class="bundle_col"><span class="dot"></span></td>
+					<?php } } ?>
                 </tr>
+
                 <tr class="desktop-row">
                     <td>Access to NYTimes apps for smartphone</td>
-                    <td class="bundle_col"><span class="dot"></span></td>
-                    <td class="bundle_col"></td>
-                    <td class="bundle_col"><span class="dot"></span></td>
+					<?php foreach ($packages as $value) {
+					if ($value->accessToNYTimesAppsPhone !=1) { ?>
+					<td class="bundle_col"></td>
+					<?php } else { ?>
+					<td class="bundle_col"><span class="dot"></span></td>
+					<?php } } ?>
                 </tr>
                 <tr class="desktop-row">
                     <td>Access to NYTimes apps for tablet</td>
-                    <td class="bundle_col"></td>
-                    <td class="bundle_col"><span class="dot"></span></td>
-                    <td class="bundle_col"><span class="dot"></span></td>
+					<?php foreach ($packages as $value) {
+					if ($value->accessToNYTimesAppsTab !=1) { ?>
+					<td class="bundle_col"></td>
+					<?php } else { ?>
+					<td class="bundle_col"><span class="dot"></span></td>
+					<?php } } ?>
                 </tr>
                 <tr class="desktop-row">
                     <td>Access to the full Times Archives from 1851</td>
-                    <td class="bundle_col"><span class="dot"></span></td>
-                    <td class="bundle_col"><span class="dot"></span></td>
-                    <td class="bundle_col"><span class="dot"></span></td>
+					<?php foreach ($packages as $value) {
+					if ($value->accessToTheFullTimesArchives !=1) { ?>
+					<td class="bundle_col"></td>
+					<?php } else { ?>
+					<td class="bundle_col"><span class="dot"></span></td>
+					<?php } } ?>
                 </tr>
                 <tr class="desktop-row">
                     <td>Share Digital Access with a family member</td>
-                    <td class="bundle_col"></td>
-                    <td class="bundle_col"></td>
-                    <td class="bundle_col"><span class="dot"></span></td>
+					<?php foreach ($packages as $value) {
+					if ($value->shareDigitalAccess !=1) { ?>
+					<td class="bundle_col"></td>
+					<?php } else { ?>
+					<td class="bundle_col"><span class="dot"></span></td>
+					<?php } } ?>
                 </tr>
                 <tr class="mobile-row">
                     <td class="mobile-hd" id="home-del-mo">Home delivery subscribers <a href="https://myaccount.nytimes.com/mobile/hdlink/smart/index.html?app=1" id="free_access_hd">get
@@ -257,33 +204,25 @@
                         <div class="icon-text">Home Delivery</div>
                     </a>
                 </li>
-                <li class="insider">
-                    <a href="http://www.nytimes.com/subscriptions/Multiproduct/lp8R374.html?campaignId=44KX4" class="icon-insider icon active" id="icon-insider">
-
-                        <div class="icon-image">
-                            <svg height="44px" width="44px">
-                                <use xlink:href="#icon-insider-svg"/>
-                            </svg>
-                        </div>
-
-
-                        <div class="icon-line"></div>
-                        <div class="icon-text">Times Insider</div>
-                    </a>
-                </li>
-                <li class="opinion">
-                    <a href="http://www.nytimes.com/subscriptions/Multiproduct/lp8X7JK.html?campaignId=47J4R" class="icon-opinion icon" id="icon-opinion">
-
-                        <div class="icon-image">
-                            <svg height="39px" width="39px">
-                                <use xlink:href="#icon-opinion-svg"/>
-                            </svg>
-                        </div>
-
-                        <div class="icon-line"></div>
-                        <div class="icon-text">NYT Opinion</div>
-                    </a>
-                </li>
+                
+                <?php $i=0; foreach($subscription as $value) { ?>
+					
+					<span id="bydefaultshodes" style="display:none">
+						<?php $i++;	if ($i == 1) {	echo $value->substypeDesc; }?>
+					</span>
+					
+					<li onmouseover="hover('<?php echo $value->substypeDesc;?>')" class="insider">
+						<a href="<?php echo $value->subsTypeSubscribeLink->direct;?>" target="<?php echo $value->subsTypeSubscribeLink->target;?>" class="icon-insider icon" id="icon-insider">
+						
+							<div class="icon-image">
+								<img src = '<?php echo $value->getSubsTypeIogo(); ?>' >
+							</div>
+							<div class="icon-line"></div>
+							<div class="icon-text"><?php echo $value->getSubsTypeName();?></div>
+						</a>
+					</li>
+				<?php } ?>
+				
                 <li class="moflow edu">
                     <a href="http://www.nytimes.com/subscriptions/edu/lp1474.html?campaignId=3KLL9" class="icon-edu icon" id="icon-edu">
 
@@ -297,38 +236,14 @@
                         <div class="icon-text">Education Rates</div>
                     </a>
                 </li>
-                <li class="corporate">
-                    <a href="http://www.nytimes.com/subscriptions/Multiproduct/lp4371.html?campaignId=476KW" class="icon-corporate icon" id="icon-corporate">
-
-                        <div class="icon-image">
-                            <svg height="68.8px" width="44px">
-                                <use xlink:href="#icon-corporate-svg"/>
-                            </svg>
-                        </div>
-
-                        <div class="icon-line"></div>
-                        <div class="icon-text">Corporate Rates</div>
-                    </a>
-                </li>
-                <li class="gift">
-                    <a href="http://www.nytimes.com/subscriptions/Multiproduct/lp4021.html?campaignId=3FQ4Y" class="icon-gift icon" id="icon-gift">
-
-                       <div class="icon-image">
-                           <svg height="40px" width="35px">
-                               <use xlink:href="#icon-gift-svg"/>
-                           </svg>
-                       </div>
-
-                        <div class="icon-line"></div>
-                        <div class="icon-text">Gift Subscriptions</div>
-                    </a>
-                </li>
             </ul>
             <div class="features">
-                <p class="icon-insider active">Enjoy the ultimate insider experience with exclusive behind-the-scenes access.<br>Just 99¢ for your first 4 weeks. <a href="http://www.nytimes.com/subscriptions/Multiproduct/lp8R374.html?campaignId=44KX4" class="text-link">See Times Insider</a></p>
-                <p class="icon-opinion">Unlimited access to the Opinion section on NYTimes.com.<br>Just 99¢ for the first 12 weeks. <a href="http://www.nytimes.com/subscriptions/Multiproduct/lp8X7JK.html?campaignId=47J4R" class="text-link">See NYT Opinion</a></p>
+                <p class="icon-insider active" id="showonhoversubscription">
+					
+                </p>
+                <!--<p class="icon-opinion">Unlimited access to the Opinion section on NYTimes.com.<br>Just 99¢ for the first 12 weeks. <a href="http://www.nytimes.com/subscriptions/Multiproduct/lp8X7JK.html?campaignId=47J4R" class="text-link">See NYT Opinion</a></p>
                 <p class="icon-corporate">Learn how organizations can save with group access to NYTimes.com and NYTimes apps. <a href="http://www.nytimes.com/subscriptions/Multiproduct/lp4371.html?campaignId=476KW" class="text-link">Learn More</a></p>
-                <p class="icon-gift">Give unlimited access to NYTimes.com and NYTimes apps for as low as $30. <a href="http://www.nytimes.com/subscriptions/Multiproduct/lp4021.html?campaignId=3FQ4Y" class="text-link">See Gift Subscriptions</a></p>
+                <p class="icon-gift">Give unlimited access to NYTimes.com and NYTimes apps for as low as $30. <a href="http://www.nytimes.com/subscriptions/Multiproduct/lp4021.html?campaignId=3FQ4Y" class="text-link">See Gift Subscriptions</a></p>-->
 
             </div>
         </div>
@@ -342,7 +257,7 @@
         <div class="section_title" id="faq_section_title">
         <?= $this->input("faq"); ?></div>
 
-<div id ="accordian" class ="accordian">
+<div id ="accordian" class ="accordian111">
   <?php while($this->block("faqQuesAns")->loop()) {  ?>
       <h3>
         <?php echo $this->input('FaqQuest'); ?>
@@ -359,10 +274,14 @@
 
  </section>
 <script>
+	document.getElementById('showonhoversubscription').innerHTML = jQuery('#bydefaultshodes').html();
+    function hover(description) {
+        document.getElementById('showonhoversubscription').innerHTML = description;
+    }
    // Use the jQuery.noConflict(); on site where the collapsible header does not work
    // Declare a variable for the jQuery.noConflict
    jQuery.noConflict();
-  jQuery('.accordian h3').on('click', function(){
+  jQuery('.accordian111 h3').on('click', function(){
      jQuery(this).next('div').slideToggle(200);
      jQuery(this).siblings().next('div').slideUp();
      
