@@ -1,8 +1,25 @@
 <?php
 $packages = $this->packages;
 $subscription = $this->subscription;
-?>
+$planFeature = $this->planFeature;
 
+$features = $this->features;
+?>
+<div class="mainHeader">
+        <div class="title desktop">
+			<?= $this->textarea("titleDesc") ?>
+        <br>
+        <span id="sub_title"><?= $this->input("titlePrice"); ?></span></div>
+
+        <div class="title moflow">Try the Times Digital Experience<br>
+        <span id="orange">99¢ for 4 weeks</span>
+        </div>
+        <div id="titleLogo"><?= $this->image("title-logo", array(
+    "title" => "The New York Times",
+
+   
+)); ?></div></div>
+</section>
 <section id="bundle_section">
 
         <div class="table_div">
@@ -11,13 +28,13 @@ $subscription = $this->subscription;
                 <thead>
                 <tr>
                     <td class="feature"></td>
-                    <?php foreach ($packages as $value) { ?>
+                    <?php foreach ($planFeature as $value) { ?>
                     	
                    
                     <td class="bundle_col">
-                        <p class="desktop"><?php echo $value->o_key;?></p>
+                        <p class="desktop"><?php echo $value->getPlanName();?></p>
                         <a href="https://myaccount.nytimes.com/get-started?OC=373674" data-oc="373674" class="button-digi font-smoothing">
-                            <span class="desktop">Try for 99¢</span>
+                            <span class="desktop"><?php echo $value->getlabelName();?></span>
                             <span class="moflow">Get web + Smartphone apps ►</span>
                         </a>
 
@@ -53,59 +70,27 @@ $subscription = $this->subscription;
                 </tr>
                 </thead>
                 <tbody>
-
+       
+            <?php foreach ($features as $val) { 
+                ?>
                 <tr class="desktop-row">
-                    <td>Price thereafter</td>
-					<?php foreach ($packages as $value) { ?>
-						<td class="bundle_col"><?php echo '$'.$value->priceThereAfter.' '.'a week';?></td>
+                    <td><?php echo $val->getplanAttributeName(); ?></td> 
+                        <?php foreach ($planFeature as $value) {
+                            ?>
+                                <td class="bundle_col"><?php 
+                                    $array = $value->getplanPackage();
+                                    if (is_array($array) || is_object($array))
+                                    {
+                                        foreach ($array as $value)
+                                        {
+                                            if($val->getPlanAttributeName() == $value->getPlanAttributeName()) { 
+                                              ?> <span class="dot"></span> <?php
+                                        }
+                                    } }
+                               ?></td>
                     <?php } ?>
-                </tr>
-                <tr class="desktop-row">
-                    <td>Access to NYTimes.com</td>
-					<?php foreach ($packages as $value) {
-					if ($value->accessTNYTimes !=1) { ?>
-					<td class="bundle_col"></td>
-					<?php } else { ?>
-					<td class="bundle_col"><span class="dot"></span></td>
-					<?php } } ?>
-                </tr>
-
-                <tr class="desktop-row">
-                    <td>Access to NYTimes apps for smartphone</td>
-					<?php foreach ($packages as $value) {
-					if ($value->accessToNYTimesAppsPhone !=1) { ?>
-					<td class="bundle_col"></td>
-					<?php } else { ?>
-					<td class="bundle_col"><span class="dot"></span></td>
-					<?php } } ?>
-                </tr>
-                <tr class="desktop-row">
-                    <td>Access to NYTimes apps for tablet</td>
-					<?php foreach ($packages as $value) {
-					if ($value->accessToNYTimesAppsTab !=1) { ?>
-					<td class="bundle_col"></td>
-					<?php } else { ?>
-					<td class="bundle_col"><span class="dot"></span></td>
-					<?php } } ?>
-                </tr>
-                <tr class="desktop-row">
-                    <td>Access to the full Times Archives from 1851</td>
-					<?php foreach ($packages as $value) {
-					if ($value->accessToTheFullTimesArchives !=1) { ?>
-					<td class="bundle_col"></td>
-					<?php } else { ?>
-					<td class="bundle_col"><span class="dot"></span></td>
-					<?php } } ?>
-                </tr>
-                <tr class="desktop-row">
-                    <td>Share Digital Access with a family member</td>
-					<?php foreach ($packages as $value) {
-					if ($value->shareDigitalAccess !=1) { ?>
-					<td class="bundle_col"></td>
-					<?php } else { ?>
-					<td class="bundle_col"><span class="dot"></span></td>
-					<?php } } ?>
-                </tr>
+                </tr><?php } ?>
+   
                 <tr class="mobile-row">
                     <td class="mobile-hd" id="home-del-mo">Home delivery subscribers <a href="https://myaccount.nytimes.com/mobile/hdlink/smart/index.html?app=1" id="free_access_hd">get
                         free access</a></td>
@@ -113,11 +98,10 @@ $subscription = $this->subscription;
 
                 <tr>
                     <td class="disclaim desktop"></td>
-                    <td class="disclaim" colspan="3"><p id="disclaimer">Promotional offers for new subscribers only.
-                        Smartphone and tablet apps are not supported on all devices. NYTimes.com + Smartphone Apps,
-                        NYTimes.com + Tablet Apps and All Digital Access subscriptions do not include e-reader editions,
-                        Times Insider content or digital versions of The New York Times Crossword. Prices shown are in
-                        U.S. dollars. Other restrictions apply.</p>
+                    <td class="disclaim" colspan="3">
+                        <p id="disclaimer">
+                            <?= $this->textarea("promotionalOffer") ?>
+                        </p>
                     </td>
                 </tr>
                 </tbody>
@@ -215,7 +199,7 @@ $subscription = $this->subscription;
 						<a href="<?php echo $value->subsTypeSubscribeLink->direct;?>" target="<?php echo $value->subsTypeSubscribeLink->target;?>" class="icon-insider icon" id="icon-insider">
 						
 							<div class="icon-image">
-								<img src = '<?php echo $value->getSubsTypeIogo(); ?>' >
+								<img src ='<?php echo $value->getprimaryImage(); ?>'onmouseout = "ImageUnhover(this,'<?php echo $value->getprimaryImage(); ?>')" onmouseover="ImageHover(this,'<?php echo $value->gethoverImage();?>')">
 							</div>
 							<div class="icon-line"></div>
 							<div class="icon-text"><?php echo $value->getSubsTypeName();?></div>
@@ -257,8 +241,9 @@ $subscription = $this->subscription;
         <div class="section_title" id="faq_section_title">
         <?= $this->input("faq"); ?></div>
 
-<div id ="accordian" class ="accordian111">
-  <?php while($this->block("faqQuesAns")->loop()) {  ?>
+<div id ="accordian" class ="accordian">
+  <?php $count = 1;
+  while($this->block("faqQuesAns")->loop()) { $count ++; ?>
       <h3>
         <?php echo $this->input('FaqQuest'); ?>
       </h3>
@@ -269,7 +254,8 @@ $subscription = $this->subscription;
  <?php } ?>
 </div>
 <h2> 
-    <?= $this->link("viewFAQ"); ?>
+    <?php if($count > 4) { ?>
+    <?= $this->link("viewFAQ"); }?>
 </h2>
 
  </section>
@@ -277,11 +263,18 @@ $subscription = $this->subscription;
 	document.getElementById('showonhoversubscription').innerHTML = jQuery('#bydefaultshodes').html();
     function hover(description) {
         document.getElementById('showonhoversubscription').innerHTML = description;
+        
+    }
+    function ImageHover(element,subImage) {
+           element.setAttribute('src', subImage);
+    }
+    function ImageUnhover(element,subImage) {
+           element.setAttribute('src', subImage);
     }
    // Use the jQuery.noConflict(); on site where the collapsible header does not work
    // Declare a variable for the jQuery.noConflict
    jQuery.noConflict();
-  jQuery('.accordian111 h3').on('click', function(){
+  jQuery('.accordian h3').on('click', function(){
      jQuery(this).next('div').slideToggle(200);
      jQuery(this).siblings().next('div').slideUp();
      

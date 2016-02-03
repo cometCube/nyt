@@ -1,6 +1,6 @@
 <?php 
 
-/** Generated at 2016-02-02T12:38:14+01:00 */
+/** Generated at 2016-02-03T09:17:44+01:00 */
 
 /**
 * Package Plan
@@ -16,26 +16,20 @@ namespace Pimcore\Model\Object;
 
 
 /**
-* @method static \Pimcore\Model\Object\PackagePlan getByPriceThereAfter ($value, $limit = 0) 
-* @method static \Pimcore\Model\Object\PackagePlan getByAccessTNYTimes ($value, $limit = 0) 
-* @method static \Pimcore\Model\Object\PackagePlan getByAccessToNYTimesAppsPhone ($value, $limit = 0) 
-* @method static \Pimcore\Model\Object\PackagePlan getByAccessToNYTimesAppsTab ($value, $limit = 0) 
-* @method static \Pimcore\Model\Object\PackagePlan getByAccessToTheFullTimesArchives ($value, $limit = 0) 
-* @method static \Pimcore\Model\Object\PackagePlan getByShareDigitalAccess ($value, $limit = 0) 
+* @method static \Pimcore\Model\Object\PackagePlan getByPlanName ($value, $limit = 0) 
+* @method static \Pimcore\Model\Object\PackagePlan getByLabelName ($value, $limit = 0) 
 * @method static \Pimcore\Model\Object\PackagePlan getByIsActive ($value, $limit = 0) 
+* @method static \Pimcore\Model\Object\PackagePlan getByPlanPackage ($value, $limit = 0) 
 */
 
 class PackagePlan extends Concrete {
 
 public $o_classId = 7;
 public $o_className = "PackagePlan";
-public $priceThereAfter;
-public $accessTNYTimes;
-public $accessToNYTimesAppsPhone;
-public $accessToNYTimesAppsTab;
-public $accessToTheFullTimesArchives;
-public $shareDigitalAccess;
+public $planName;
+public $labelName;
 public $isActive;
+public $planPackage;
 
 
 /**
@@ -49,158 +43,54 @@ public static function create($values = array()) {
 }
 
 /**
-* Get priceThereAfter - Price There After
+* Get planName - Plan Name
 * @return string
 */
-public function getPriceThereAfter () {
-	$preValue = $this->preGetValue("priceThereAfter"); 
+public function getPlanName () {
+	$preValue = $this->preGetValue("planName"); 
 	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
 	}
-	$data = $this->priceThereAfter;
-	if(\Pimcore\Model\Object::doGetInheritedValues() && $this->getClass()->getFieldDefinition("priceThereAfter")->isEmpty($data)) {
-		return $this->getValueFromParent("priceThereAfter");
+	$data = $this->planName;
+	if(\Pimcore\Model\Object::doGetInheritedValues() && $this->getClass()->getFieldDefinition("planName")->isEmpty($data)) {
+		return $this->getValueFromParent("planName");
 	}
 	return $data;
 }
 
 /**
-* Set priceThereAfter - Price There After
-* @param string $priceThereAfter
+* Set planName - Plan Name
+* @param string $planName
 * @return \Pimcore\Model\Object\PackagePlan
 */
-public function setPriceThereAfter ($priceThereAfter) {
-	$this->priceThereAfter = $priceThereAfter;
+public function setPlanName ($planName) {
+	$this->planName = $planName;
 	return $this;
 }
 
 /**
-* Get accessTNYTimes - Access to NYTimes
-* @return boolean
+* Get labelName - Label Name
+* @return string
 */
-public function getAccessTNYTimes () {
-	$preValue = $this->preGetValue("accessTNYTimes"); 
+public function getLabelName () {
+	$preValue = $this->preGetValue("labelName"); 
 	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
 	}
-	$data = $this->accessTNYTimes;
-	if(\Pimcore\Model\Object::doGetInheritedValues() && $this->getClass()->getFieldDefinition("accessTNYTimes")->isEmpty($data)) {
-		return $this->getValueFromParent("accessTNYTimes");
+	$data = $this->labelName;
+	if(\Pimcore\Model\Object::doGetInheritedValues() && $this->getClass()->getFieldDefinition("labelName")->isEmpty($data)) {
+		return $this->getValueFromParent("labelName");
 	}
 	return $data;
 }
 
 /**
-* Set accessTNYTimes - Access to NYTimes
-* @param boolean $accessTNYTimes
+* Set labelName - Label Name
+* @param string $labelName
 * @return \Pimcore\Model\Object\PackagePlan
 */
-public function setAccessTNYTimes ($accessTNYTimes) {
-	$this->accessTNYTimes = $accessTNYTimes;
-	return $this;
-}
-
-/**
-* Get accessToNYTimesAppsPhone - Access to NYTimes apps Phone
-* @return boolean
-*/
-public function getAccessToNYTimesAppsPhone () {
-	$preValue = $this->preGetValue("accessToNYTimesAppsPhone"); 
-	if($preValue !== null && !\Pimcore::inAdmin()) { 
-		return $preValue;
-	}
-	$data = $this->accessToNYTimesAppsPhone;
-	if(\Pimcore\Model\Object::doGetInheritedValues() && $this->getClass()->getFieldDefinition("accessToNYTimesAppsPhone")->isEmpty($data)) {
-		return $this->getValueFromParent("accessToNYTimesAppsPhone");
-	}
-	return $data;
-}
-
-/**
-* Set accessToNYTimesAppsPhone - Access to NYTimes apps Phone
-* @param boolean $accessToNYTimesAppsPhone
-* @return \Pimcore\Model\Object\PackagePlan
-*/
-public function setAccessToNYTimesAppsPhone ($accessToNYTimesAppsPhone) {
-	$this->accessToNYTimesAppsPhone = $accessToNYTimesAppsPhone;
-	return $this;
-}
-
-/**
-* Get accessToNYTimesAppsTab - Access to NYTimes apps Tab
-* @return boolean
-*/
-public function getAccessToNYTimesAppsTab () {
-	$preValue = $this->preGetValue("accessToNYTimesAppsTab"); 
-	if($preValue !== null && !\Pimcore::inAdmin()) { 
-		return $preValue;
-	}
-	$data = $this->accessToNYTimesAppsTab;
-	if(\Pimcore\Model\Object::doGetInheritedValues() && $this->getClass()->getFieldDefinition("accessToNYTimesAppsTab")->isEmpty($data)) {
-		return $this->getValueFromParent("accessToNYTimesAppsTab");
-	}
-	return $data;
-}
-
-/**
-* Set accessToNYTimesAppsTab - Access to NYTimes apps Tab
-* @param boolean $accessToNYTimesAppsTab
-* @return \Pimcore\Model\Object\PackagePlan
-*/
-public function setAccessToNYTimesAppsTab ($accessToNYTimesAppsTab) {
-	$this->accessToNYTimesAppsTab = $accessToNYTimesAppsTab;
-	return $this;
-}
-
-/**
-* Get accessToTheFullTimesArchives - Access to the full Times Archives
-* @return boolean
-*/
-public function getAccessToTheFullTimesArchives () {
-	$preValue = $this->preGetValue("accessToTheFullTimesArchives"); 
-	if($preValue !== null && !\Pimcore::inAdmin()) { 
-		return $preValue;
-	}
-	$data = $this->accessToTheFullTimesArchives;
-	if(\Pimcore\Model\Object::doGetInheritedValues() && $this->getClass()->getFieldDefinition("accessToTheFullTimesArchives")->isEmpty($data)) {
-		return $this->getValueFromParent("accessToTheFullTimesArchives");
-	}
-	return $data;
-}
-
-/**
-* Set accessToTheFullTimesArchives - Access to the full Times Archives
-* @param boolean $accessToTheFullTimesArchives
-* @return \Pimcore\Model\Object\PackagePlan
-*/
-public function setAccessToTheFullTimesArchives ($accessToTheFullTimesArchives) {
-	$this->accessToTheFullTimesArchives = $accessToTheFullTimesArchives;
-	return $this;
-}
-
-/**
-* Get shareDigitalAccess - Share Digital Access
-* @return boolean
-*/
-public function getShareDigitalAccess () {
-	$preValue = $this->preGetValue("shareDigitalAccess"); 
-	if($preValue !== null && !\Pimcore::inAdmin()) { 
-		return $preValue;
-	}
-	$data = $this->shareDigitalAccess;
-	if(\Pimcore\Model\Object::doGetInheritedValues() && $this->getClass()->getFieldDefinition("shareDigitalAccess")->isEmpty($data)) {
-		return $this->getValueFromParent("shareDigitalAccess");
-	}
-	return $data;
-}
-
-/**
-* Set shareDigitalAccess - Share Digital Access
-* @param boolean $shareDigitalAccess
-* @return \Pimcore\Model\Object\PackagePlan
-*/
-public function setShareDigitalAccess ($shareDigitalAccess) {
-	$this->shareDigitalAccess = $shareDigitalAccess;
+public function setLabelName ($labelName) {
+	$this->labelName = $labelName;
 	return $this;
 }
 
@@ -230,7 +120,37 @@ public function setIsActive ($isActive) {
 	return $this;
 }
 
+/**
+* Get planPackage - Plan Package
+* @return array
+*/
+public function getPlanPackage () {
+	$preValue = $this->preGetValue("planPackage"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
+		return $preValue;
+	}
+	$data = $this->getClass()->getFieldDefinition("planPackage")->preGetData($this);
+	if(\Pimcore\Model\Object::doGetInheritedValues() && $this->getClass()->getFieldDefinition("planPackage")->isEmpty($data)) {
+		return $this->getValueFromParent("planPackage");
+	}
+	return $data;
+}
+
+/**
+* Set planPackage - Plan Package
+* @param array $planPackage
+* @return \Pimcore\Model\Object\PackagePlan
+*/
+public function setPlanPackage ($planPackage) {
+	$this->planPackage = $this->getClass()->getFieldDefinition("planPackage")->preSetData($this, $planPackage);
+	return $this;
+}
+
 protected static $_relationFields = array (
+  'planPackage' => 
+  array (
+    'type' => 'objects',
+  ),
 );
 
 public $lazyLoadedFields = NULL;

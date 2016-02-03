@@ -1,6 +1,6 @@
 <?php 
 
-/** Generated at 2016-02-02T10:22:29+01:00 */
+/** Generated at 2016-02-03T08:07:39+01:00 */
 
 /**
 * Inheritance: no
@@ -17,7 +17,8 @@ namespace Pimcore\Model\Object;
 /**
 * @method static \Pimcore\Model\Object\Subscription getBySubsTypeName ($value, $limit = 0) 
 * @method static \Pimcore\Model\Object\Subscription getBySubstypeDesc ($value, $limit = 0) 
-* @method static \Pimcore\Model\Object\Subscription getBySubsTypeIogo ($value, $limit = 0) 
+* @method static \Pimcore\Model\Object\Subscription getByPrimaryImage ($value, $limit = 0) 
+* @method static \Pimcore\Model\Object\Subscription getByHoverImage ($value, $limit = 0) 
 * @method static \Pimcore\Model\Object\Subscription getBySubsTypeSubscribeLink ($value, $limit = 0) 
 * @method static \Pimcore\Model\Object\Subscription getBySubsIsActive ($value, $limit = 0) 
 */
@@ -28,7 +29,8 @@ public $o_classId = 8;
 public $o_className = "Subscription";
 public $subsTypeName;
 public $substypeDesc;
-public $subsTypeIogo;
+public $primaryImage;
+public $hoverImage;
 public $subsTypeSubscribeLink;
 public $subsIsActive;
 
@@ -90,25 +92,48 @@ public function setSubstypeDesc ($substypeDesc) {
 }
 
 /**
-* Get subsTypeIogo - Subscription Package Type Logo
+* Get primaryImage - Primary Image
 * @return \Pimcore\Model\Asset\Image
 */
-public function getSubsTypeIogo () {
-	$preValue = $this->preGetValue("subsTypeIogo"); 
+public function getPrimaryImage () {
+	$preValue = $this->preGetValue("primaryImage"); 
 	if($preValue !== null && !\Pimcore::inAdmin()) { 
 		return $preValue;
 	}
-	$data = $this->subsTypeIogo;
+	$data = $this->primaryImage;
 	return $data;
 }
 
 /**
-* Set subsTypeIogo - Subscription Package Type Logo
-* @param \Pimcore\Model\Asset\Image $subsTypeIogo
+* Set primaryImage - Primary Image
+* @param \Pimcore\Model\Asset\Image $primaryImage
 * @return \Pimcore\Model\Object\Subscription
 */
-public function setSubsTypeIogo ($subsTypeIogo) {
-	$this->subsTypeIogo = $subsTypeIogo;
+public function setPrimaryImage ($primaryImage) {
+	$this->primaryImage = $primaryImage;
+	return $this;
+}
+
+/**
+* Get hoverImage - Hover Image
+* @return \Pimcore\Model\Asset\Image
+*/
+public function getHoverImage () {
+	$preValue = $this->preGetValue("hoverImage"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
+		return $preValue;
+	}
+	$data = $this->hoverImage;
+	return $data;
+}
+
+/**
+* Set hoverImage - Hover Image
+* @param \Pimcore\Model\Asset\Image $hoverImage
+* @return \Pimcore\Model\Object\Subscription
+*/
+public function setHoverImage ($hoverImage) {
+	$this->hoverImage = $hoverImage;
 	return $this;
 }
 

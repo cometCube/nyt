@@ -113,12 +113,12 @@ a, a:visited {
       top: 20%; } }
 
 #header_section {
-  font-family: "nyt-franklin", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Arial", "nyt-franklin", "Helvetica Neue", sans-serif;
   font-weight: 200;
   letter-spacing: 0;
   width: 100%;
  
-  padding-bottom: 15px;
+  padding-bottom: 0px;
   padding-left: 50px; }
   @media only screen and (min-width: 768px) and (max-width: 979px) {
     #header_section {
@@ -963,36 +963,67 @@ body {
 font-size:18px;
 
 }
-.accordian h3 {
-background: #fff url(../images/icon/arrow-left.png) no-repeat scroll 2% center;
-border: 1px solid #d3d3d3;
-color: #555555;
-border-radius: 4px;
-padding: 10px 30px;
+#accordian h3, .accordian h3 {
+color: #666;
 font-family: Verdana,Arial,sans-serif;
-   /*font-size: 1.3em;*/
-font-weight: normal;
 margin-bottom: 3px;
 cursor:pointer;
 transition: background 0.1s ease-in-out;
+font-size: 16px;
+font-weight: 400;
+letter-spacing: 0;
+line-height: 35px;
+padding-left: 40px;
 }
+
+.accordian .pimcore_editable h3{
+    width:100%;
+}
+
 .accordian h3.tactive {
-background: #fff url("../images/icon/arrow-down.png") no-repeat scroll 2% center;
-color:#000;
+color:#005da2;
+}
+
+#accordian h3.tactive, .accordian h3.tactive {
+color:#005da2;
 }
 .accordian h3:hover{color:#000;}
-.accordian div {
-background: #fff;
-border: 1px solid #d3d3d3;
-padding: 10px 30px;
+#accordian div, .accordian div {
 font-family: Verdana,Arial,sans-serif;
-   /*font-size: 1.1em;*/
-color: #555555;
-border-radius: 0 0 4px 4px;
 margin-top: -5px;
 display: none;
 margin-bottom: 3px;
 transition: display 0.1s ease-in-out;
+color: #666;
+font-size: 14px;
+font-weight: 400;
+letter-spacing: 0;
+padding-left: 85px;
+width: 70%;
+}
+#accordian.accordian div.pimcore_editable, #accordian.accordian div.pimcore_editable div{
+    display:block;
+    width:auto;
+    padding:0px;
+    float:left;
+    margin:0;
+}
+#accordian.accordian div.pimcore_editable.pimcore_tag_input{
+    width:100%;
 }
 .accordian h3:hover + div {
+}
+
+a:hover .icon-text{
+    color:#f60;
+}
+ 
+.mainHeader > div#titleLogo {
+    float: left;
+    height: 165px;
+    margin-left: 40px;
+}
+.table_div{
+    
+    margin-top: 20px;
 }

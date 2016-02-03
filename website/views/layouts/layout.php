@@ -42,12 +42,14 @@
 </head>
 
 <body>
+    <div id="container">
 <?= $this->inc("/shared/header");?>
 
 <?= $this->layout()->content ?>
 
 <?= $this->inc("/shared/footer"); ?>
-</body>
+        </div>
+    </body>
 </html>
 
 	
