@@ -1,6 +1,6 @@
 <?php 
 
-/** Generated at 2016-02-03T09:17:44+01:00 */
+/** Generated at 2016-02-04T07:36:34+01:00 */
 
 /**
 * Package Plan
@@ -17,7 +17,9 @@ namespace Pimcore\Model\Object;
 
 /**
 * @method static \Pimcore\Model\Object\PackagePlan getByPlanName ($value, $limit = 0) 
+* @method static \Pimcore\Model\Object\PackagePlan getByPrice ($value, $limit = 0) 
 * @method static \Pimcore\Model\Object\PackagePlan getByLabelName ($value, $limit = 0) 
+* @method static \Pimcore\Model\Object\PackagePlan getByLabelLink ($value, $limit = 0) 
 * @method static \Pimcore\Model\Object\PackagePlan getByIsActive ($value, $limit = 0) 
 * @method static \Pimcore\Model\Object\PackagePlan getByPlanPackage ($value, $limit = 0) 
 */
@@ -27,7 +29,9 @@ class PackagePlan extends Concrete {
 public $o_classId = 7;
 public $o_className = "PackagePlan";
 public $planName;
+public $price;
 public $labelName;
+public $labelLink;
 public $isActive;
 public $planPackage;
 
@@ -69,6 +73,32 @@ public function setPlanName ($planName) {
 }
 
 /**
+* Get price - Price
+* @return string
+*/
+public function getPrice () {
+	$preValue = $this->preGetValue("price"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
+		return $preValue;
+	}
+	$data = $this->price;
+	if(\Pimcore\Model\Object::doGetInheritedValues() && $this->getClass()->getFieldDefinition("price")->isEmpty($data)) {
+		return $this->getValueFromParent("price");
+	}
+	return $data;
+}
+
+/**
+* Set price - Price
+* @param string $price
+* @return \Pimcore\Model\Object\PackagePlan
+*/
+public function setPrice ($price) {
+	$this->price = $price;
+	return $this;
+}
+
+/**
 * Get labelName - Label Name
 * @return string
 */
@@ -91,6 +121,32 @@ public function getLabelName () {
 */
 public function setLabelName ($labelName) {
 	$this->labelName = $labelName;
+	return $this;
+}
+
+/**
+* Get labelLink - Label Link
+* @return string
+*/
+public function getLabelLink () {
+	$preValue = $this->preGetValue("labelLink"); 
+	if($preValue !== null && !\Pimcore::inAdmin()) { 
+		return $preValue;
+	}
+	$data = $this->labelLink;
+	if(\Pimcore\Model\Object::doGetInheritedValues() && $this->getClass()->getFieldDefinition("labelLink")->isEmpty($data)) {
+		return $this->getValueFromParent("labelLink");
+	}
+	return $data;
+}
+
+/**
+* Set labelLink - Label Link
+* @param string $labelLink
+* @return \Pimcore\Model\Object\PackagePlan
+*/
+public function setLabelLink ($labelLink) {
+	$this->labelLink = $labelLink;
 	return $this;
 }
 
