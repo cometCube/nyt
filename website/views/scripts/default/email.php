@@ -80,25 +80,14 @@
   <div id="growl-container">
 
     <div id="growl-logo">
-      <img src="http://graphics8.nytimes.com/adx/images/ADS/38/24/ad.382465/logo-nytimes.png" alt="">
+      <?= $this->image("logo") ?>
       <span id="growl-thisis"><?= $this->input("adverstisement") ?></span>
     </div>
 
     <div id="growl-skipthis"><a href="javascript:;" data-content-placement="1" class="nytdGrowlNotifyCross"><?= $this->link("skilink") ?></a></div>
 	<table width="100%" cellspacing="0" cellpadding="0" style="background:#e9e9e9;">
     	<tr>
-        	<td width="25%">        <?= $this->areablock("leftarea",array(
-            "allowed"=>array("ContentLeft"),
-            "areablock_toolbar" => array(
-                "title" => "",
-                "width" => 230,
-                "x" => 20,
-                "y" => 50,
-                "xAlign" => "right",
-                "buttonWidth" => 218,
-                "buttonMaxCharacters" => 35
-            )));
-        ?></td>
+        	<td width="25%">       </td>
             <td width="50%">
             	
             	<div id="growl-bg">
@@ -107,7 +96,7 @@
           
                   <a href="#" style="background:#000; text-decoration:none; color:#fff; padding:4px; display:inline-block;">
                     <span style="padding:5px; border:1px solid #b6b6b6; display:block; font-family:arial; text-transform:uppercase; font-weight:bold; font-size:16px;">
-                        <img src="arrow.png" alt="">
+                       
                         See my options
                     </span>
                   </a>
@@ -115,18 +104,7 @@
            
                 </div>
             </td>
-            <td width="25%"><?= $this->areablock("rightarea",array(
-            "allowed"=>array("ContentRight"),
-            "areablock_toolbar" => array(
-                "title" => "",
-                "width" => 230,
-                "x" => 20,
-                "y" => 50,
-                "xAlign" => "right",
-                "buttonWidth" => 218,
-                "buttonMaxCharacters" => 35
-            )));
-        ?></td>
+            <td width="25%"></td>
         </tr>
     </table>
   </div>
