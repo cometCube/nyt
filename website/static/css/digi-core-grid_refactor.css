@@ -1001,19 +1001,36 @@ letter-spacing: 0;
 padding-left: 85px;
 width: 70%;
 }
-#accordian.accordian div.pimcore_editable, #accordian.accordian div.pimcore_editable div{
+#accordian.accordian div.pimcore_editable.pimcore_tag_block, #accordian.accordian div.pimcore_editable.pimcore_tag_block div{
     display:block;
     width:auto;
     padding:0px;
     float:left;
     margin:0;
+    box-sizing: border-box;
 }
 #accordian.accordian div.pimcore_editable.pimcore_tag_input{
     width:100%;
+    box-sizing: border-box;
 }
-.accordian h3:hover + div {
+#accordian.accordian div.pimcore_editable.pimcore_tag_block div.pimcore_block_entry.faqQuesAns,
+#accordian.accordian div.pimcore_editable.pimcore_tag_block div.pimcore_tag_input,
+#accordian.accordian div.pimcore_editable.pimcore_tag_block div.pimcore_tag_wysiwyg,
+#accordian.accordian div.pimcore_editable.pimcore_tag_block div.content-area-m,
+#accordian.accordian div.pimcore_editable.pimcore_tag_block div.pimcore_wysiwyg.cke_editable{
+    float:none;
+    width:100%;
+    display:block;
+    box-sizing: border-box;
+    margin-left: 10px;
 }
-
+#accordian .pimcore_editable h3, .accordian .pimcore_editable h3{
+    margin:0;
+    clear:both;
+    padding:0;
+    box-sizing: border-box;
+    margin-left: 10px;
+}
 a:hover .icon-text{
     color:#f60;
 }
@@ -1027,3 +1044,4 @@ a:hover .icon-text{
     
     margin-top: 20px;
 }
+
