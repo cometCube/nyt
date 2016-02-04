@@ -184,7 +184,7 @@ $features = $this->features;
                         </div>
 
 
-                        <div class="icon-line"></div>
+                        <div></div>
                         <div class="icon-text">Home Delivery</div>
                     </a>
                 </li>
