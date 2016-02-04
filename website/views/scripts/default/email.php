@@ -111,7 +111,7 @@
 </div>
 
 <!-- Ensighten --><img src="https://nytimes.activate.ensighten.com/no-content?pid=1&cw_ei=2&ei=2&pa=-20&cw_pa=-20&sd=Left9|44YLL|382465|256465|44YLL&lei=2&lsi=123abc" width="1" height="1" class="hidden">
-<!-- Krux --><img src="http://beacon.krxd.net/event.gif?event_id=JAJ77GLK&amp;event_type=cact" alt="" class="hidden">
+<!-- Krux -->
 <!-- iCrossing Floodlight -->
 <div id="mkt-floodlight-interstitial"></div>
 <script src="http://static01.nyt.com/marketing/abTest/addfloodlight_interstitial.js"></script>
